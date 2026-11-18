@@ -180,3 +180,39 @@ Revisando desviaciones del stack...
 22:54:25 
 RESULTADO: TODO OK, puedes entregar.
 22:54:25 FIN con código de salida 0
+
+===== setup 2026-11-18 12:29:56 =====
+12:29:56 Sistema detectado: macos arm64  |  Python del arranque: 3.12.12
+12:29:56 MODO: check  |  versión del script: 2026-11-16  |  argumentos: --check
+12:29:56 SISTEMA: macOS-15.5-arm64-arm-64bit  |  detectado: macos arm64  |  versión: Darwin Kernel Version 24.5.0: Tue Apr 22 19:54:43 PDT 2025; root:xnu-11417.121.6~2/RELEASE_ARM64_T8132
+12:29:56 PYTHON: 3.12.12 (/Users/ralo/Downloads/hackathon-unam/.venv/bin/python)
+12:29:56 USUARIO: ralo  |  carpeta actual: /Users/ralo/Downloads/hackathon-unam
+12:29:56 PROYECTO: /Users/ralo/Downloads/hackathon-unam  |  largo de ruta: 36  |  espacios: False  |  no ASCII: False
+12:29:56 DISCO LIBRE: 78.9 GB
+12:29:56 PROXY: ninguno
+12:29:56 Proyecto: /Users/ralo/Downloads/hackathon-unam
+12:29:56 
+Validando (no se descarga ni instala nada)...
+12:29:56 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/uv/uv pip check --python /Users/ralo/Downloads/hackathon-unam/.venv/bin/python
+12:29:56 Checked 55 packages in 5ms
+All installed packages are compatible
+12:29:56 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+12:29:56 
+12:29:56   Pieza              Esperado                            Encontrado      Estado
+12:29:56   -----------------  ----------------------------------  --------------  ------
+12:29:56   uv                 0.11.19                             0.11.19         OK    
+12:29:56   Python (.venv)     3.12.12                             3.12.12         OK    
+12:29:56   Node               v22.23.1                            v22.23.1        OK    
+12:29:56   npm                10.x                                10.9.8          OK    
+12:29:56   Paquetes Python    9 fijos                             9 coinciden     OK    
+12:29:56   Paquetes npm       12 fijos                            12 coinciden    OK    
+12:29:56   pip check          sin conflictos                      sin conflictos  OK    
+12:29:56   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+12:29:56 
+Revisando desviaciones del stack...
+12:29:56 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+12:29:57 
+12:29:57     El proyecto sigue el stack del evento
+12:29:57 
+RESULTADO: TODO OK, puedes entregar.
+12:29:57 FIN con código de salida 0
