@@ -38,14 +38,14 @@ export default function LineaTiempo({ cuadros, eventos, frameActual, onCambiar }
 
   return (
     <div className="mt-2">
-      <div className="relative h-6" aria-label="Eventos de la jugada">
+      <div className="relative h-7" aria-label="Eventos de la jugada">
         {marcadores.map((m) => (
           <button
             key={m.clave}
             type="button"
             onClick={() => onCambiar(m.indice)}
             title={`${m.etiqueta} (cuadro ${m.indice})`}
-            className="absolute -translate-x-1/2 whitespace-nowrap rounded bg-amber-100 px-1 text-xs text-gray-800 hover:bg-amber-200"
+            className="absolute -translate-x-1/2 whitespace-nowrap rounded-full border border-amber-300 bg-amber-100 px-2 text-xs font-medium text-amber-900 shadow-sm transition hover:bg-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-300"
             style={{ left: `${ultimo === 0 ? 0 : (m.indice / ultimo) * 100}%` }}
           >
             {m.etiqueta}
@@ -61,7 +61,7 @@ export default function LineaTiempo({ cuadros, eventos, frameActual, onCambiar }
         disabled={n === 0}
         onChange={(e) => onCambiar(Number(e.target.value))}
         aria-label="Cuadro de la jugada"
-        className="w-full"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-indigo-600 disabled:cursor-not-allowed disabled:opacity-50"
       />
     </div>
   )

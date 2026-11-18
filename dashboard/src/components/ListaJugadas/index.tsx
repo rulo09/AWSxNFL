@@ -56,23 +56,23 @@ export default function ListaJugadas({ filtros, seleccionada, onSeleccionar }: P
     seleccionada !== null && seleccionada.gameId === j.gameId && seleccionada.playId === j.playId
 
   return (
-    <section aria-label="Jugadas fallidas" className="rounded border border-gray-200 bg-white p-4">
-      <h2 className="text-lg font-semibold">Jugadas fallidas</h2>
+    <section aria-label="Jugadas fallidas" className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <h2 className="mb-3 flex items-center gap-2 text-base font-semibold text-slate-800 before:h-5 before:w-1 before:rounded-full before:bg-indigo-500 before:content-['']">Jugadas fallidas</h2>
       {error && (
-        <p role="alert" className="mt-2 text-sm text-red-700">
+        <p role="alert" className="mt-2 rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700">
           {error}
         </p>
       )}
       {cargando && (
-        <p role="status" className="mt-2 text-sm text-gray-600">
+        <p role="status" className="mt-2 text-sm text-slate-600">
           Cargando jugadas
         </p>
       )}
       {jugadas !== null && jugadas.length === 0 && (
-        <p className="mt-2 text-sm text-gray-600">No hay jugadas fallidas con estos filtros</p>
+        <p className="mt-2 text-sm text-slate-600">No hay jugadas fallidas con estos filtros</p>
       )}
       {jugadas !== null && jugadas.length > 0 && (
-        <ul role="listbox" aria-label="Lista de jugadas fallidas" className="mt-2 max-h-96 space-y-1 overflow-y-auto">
+        <ul role="listbox" aria-label="Lista de jugadas fallidas" className="mt-2 max-h-96 space-y-1.5 overflow-y-auto pr-1">
           {jugadas.map((j) => {
             const activa = esSeleccionada(j)
             return (
@@ -88,15 +88,15 @@ export default function ListaJugadas({ filtros, seleccionada, onSeleccionar }: P
                     onSeleccionar(j)
                   }
                 }}
-                className={`cursor-pointer rounded border p-2 text-sm ${
-                  activa ? 'border-blue-600 bg-blue-100' : 'border-gray-200 hover:bg-gray-50'
+                className={`cursor-pointer rounded-lg border p-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-indigo-300 ${
+                  activa ? 'border-indigo-500 bg-indigo-50 shadow-sm ring-1 ring-indigo-500' : 'border-slate-200 odd:bg-white even:bg-slate-50/60 hover:border-indigo-300 hover:bg-indigo-50/50'
                 }`}
               >
-                <div className="font-medium">
+                <div className="font-semibold text-slate-900">
                   {j.equipo} vs {j.rival}: down {j.down}, {j.yardsToGo} yardas por ganar
                 </div>
-                <div className="text-gray-700">{j.descripcion}</div>
-                <div className="text-xs text-gray-600">
+                <div className="text-slate-700">{j.descripcion}</div>
+                <div className="mt-1 text-xs text-slate-500">
                   Formación: {j.formacion ?? SIN_DATO} · Personal: {j.personal ?? SIN_DATO} · Cobertura:{' '}
                   {j.cobertura ?? SIN_DATO}
                 </div>

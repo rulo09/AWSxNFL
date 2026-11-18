@@ -18,17 +18,20 @@ export default function App() {
   }, [])
 
   return (
-    <main className="mx-auto max-w-7xl space-y-4 p-4">
-      <header>
-        <h1 className="text-2xl font-bold">Entrenador de jugadas fallidas</h1>
-        <p className="text-sm text-gray-600">
+    <div className="min-h-screen bg-slate-50">
+    <header className="bg-gradient-to-r from-navy-900 to-navy-700 shadow-lg">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Entrenador de jugadas fallidas</h1>
+        <p className="mt-1 text-sm text-indigo-200">
           Revisa jugadas de pase fallidas y compáralas con jugadas efectivas de otros equipos.
         </p>
-      </header>
+      </div>
+    </header>
+    <main className="mx-auto max-w-7xl space-y-6 px-4 py-6 sm:px-6">
 
       <Filtros valor={filtros} onCambio={setFiltros} />
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         <ListaJugadas filtros={filtros} seleccionada={seleccion} onSeleccionar={alSeleccionar} />
         <Repeticion jugada={seleccion} />
       </div>
@@ -36,5 +39,6 @@ export default function App() {
       <Similares jugada={seleccion} onSugerencias={setSugerencias} />
       <Recomendacion jugada={seleccion} sugerencias={sugerencias} />
     </main>
+    </div>
   )
 }

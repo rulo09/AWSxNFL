@@ -83,19 +83,19 @@ export default function Repeticion({ jugada }: Props) {
   const cuadro = cuadros[Math.min(frameActual, cuadros.length - 1)] ?? null
 
   return (
-    <section aria-label="Repetición" className="rounded border border-gray-200 bg-white p-4">
-      <h2 className="text-lg font-semibold">Repetición de la jugada</h2>
-      {jugada === null && <p className="text-sm text-gray-600">Selecciona una jugada para ver la repetición.</p>}
+    <section aria-label="Repetición" className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <h2 className="mb-3 flex items-center gap-2 text-base font-semibold text-slate-800 before:h-5 before:w-1 before:rounded-full before:bg-indigo-500 before:content-['']">Repetición de la jugada</h2>
+      {jugada === null && <p className="text-sm text-slate-600">Selecciona una jugada para ver la repetición.</p>}
       {jugada !== null && estado === 'cargando' && (
-        <p role="status" className="text-sm text-gray-600">Cargando repetición</p>
+        <p role="status" className="text-sm text-slate-600">Cargando repetición</p>
       )}
       {jugada !== null && estado === 'error' && (
-        <p role="alert" className="text-sm text-red-700">{MSG_ERROR}</p>
+        <p role="alert" className="rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700">{MSG_ERROR}</p>
       )}
-      {jugada !== null && estado === 'sinDatos' && <p className="text-sm text-gray-600">{MSG_SIN_DATOS}</p>}
+      {jugada !== null && estado === 'sinDatos' && <p className="text-sm text-slate-600">{MSG_SIN_DATOS}</p>}
       {jugada !== null && estado === 'listo' && <Campo cuadro={cuadro} />}
       {jugada !== null && (estado === 'listo' || estado === 'sinDatos') && (
-        <div className="mt-2">
+        <div className="mt-3 space-y-2">
           <Controles
             reproduciendo={reproduciendo}
             deshabilitado={total === 0}

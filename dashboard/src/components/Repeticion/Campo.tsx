@@ -19,10 +19,20 @@ export default function Campo({ cuadro }: Props) {
       viewBox={`0 0 ${ANCHO} ${ALTO}`}
       role="img"
       aria-label="Campo de futbol americano con la posición de los jugadores"
-      className="w-full rounded border border-gray-300 bg-green-600"
+      className="w-full rounded-lg border border-emerald-900/30 bg-emerald-700 shadow-inner"
     >
-      <rect x={0} y={0} width={10} height={ALTO} fill="#14532d" />
-      <rect x={110} y={0} width={10} height={ALTO} fill="#14532d" />
+      <defs>
+        <linearGradient id="cesped" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#2f8f4e" />
+          <stop offset="1" stopColor="#237a40" />
+        </linearGradient>
+      </defs>
+      <rect x={0} y={0} width={ANCHO} height={ALTO} fill="url(#cesped)" />
+      {Array.from({ length: 10 }, (_, i) => (
+        <rect key={`franja${i}`} x={10 + i * 10} y={0} width={10} height={ALTO} fill={i % 2 === 0 ? '#ffffff' : '#000000'} fillOpacity={0.04} />
+      ))}
+      <rect x={0} y={0} width={10} height={ALTO} fill="#1e3a8a" fillOpacity={0.55} />
+      <rect x={110} y={0} width={10} height={ALTO} fill="#7f1d1d" fillOpacity={0.55} />
       {[10, 110].map((x) => (
         <line key={`gol${x}`} x1={x} y1={0} x2={x} y2={ALTO} stroke="#ffffff" strokeWidth={0.5} />
       ))}
@@ -45,10 +55,10 @@ export default function Campo({ cuadro }: Props) {
           key={j.nflId}
           cx={j.x}
           cy={j.y}
-          r={0.9}
+          r={1}
           fill={j.equipo === 'ofensiva' ? COLOR_OFENSIVA : COLOR_DEFENSIVA}
           stroke="#ffffff"
-          strokeWidth={0.2}
+          strokeWidth={0.3}
         />
       ))}
       {cuadro?.balon && (

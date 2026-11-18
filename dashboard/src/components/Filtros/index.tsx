@@ -49,7 +49,7 @@ function etiquetaEquipo(e: Equipo): string {
   return e.nombre ? `${e.nombre} (${e.abbr})` : e.abbr
 }
 
-const CLASE_SELECT = 'rounded border border-gray-300 bg-white px-2 py-1 text-sm'
+const CLASE_SELECT = 'rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 shadow-sm transition hover:border-indigo-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 disabled:cursor-not-allowed disabled:opacity-50'
 
 export default function Filtros({ valor, onCambio }: Props) {
   const [opciones, setOpciones] = useState<Opciones>(VACIAS)
@@ -83,10 +83,10 @@ export default function Filtros({ valor, onCambio }: Props) {
   }
 
   return (
-    <section aria-label="Filtros" className="rounded border border-gray-200 bg-white p-4">
-      <h2 className="mb-2 text-lg font-semibold">Filtros</h2>
-      <div className="flex flex-wrap gap-4">
-        <label className="flex flex-col gap-1 text-sm">
+    <section aria-label="Filtros" className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <h2 className="mb-3 flex items-center gap-2 text-base font-semibold text-slate-800 before:h-5 before:w-1 before:rounded-full before:bg-indigo-500 before:content-['']">Filtros</h2>
+      <div className="flex flex-wrap gap-4 sm:gap-6">
+        <label className="flex flex-col gap-1 text-xs font-medium uppercase tracking-wide text-slate-500">
           Down
           <select
             className={CLASE_SELECT}
@@ -101,7 +101,7 @@ export default function Filtros({ valor, onCambio }: Props) {
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-1 text-sm">
+        <label className="flex flex-col gap-1 text-xs font-medium uppercase tracking-wide text-slate-500">
           Razón del fallo
           <select
             className={CLASE_SELECT}
@@ -116,7 +116,7 @@ export default function Filtros({ valor, onCambio }: Props) {
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-1 text-sm">
+        <label className="flex flex-col gap-1 text-xs font-medium uppercase tracking-wide text-slate-500">
           Equipo
           <select
             className={CLASE_SELECT}
@@ -133,7 +133,7 @@ export default function Filtros({ valor, onCambio }: Props) {
         </label>
       </div>
       {error && (
-        <p role="alert" className="mt-2 text-sm text-red-700">
+        <p role="alert" className="mt-3 rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700">
           {error}
         </p>
       )}

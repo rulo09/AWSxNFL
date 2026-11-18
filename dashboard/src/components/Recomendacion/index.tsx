@@ -65,32 +65,32 @@ export default function Recomendacion({ jugada, sugerencias }: Props) {
   const enCurso = estado.tipo === 'pendiente'
 
   return (
-    <section aria-label="Recomendación" className="rounded border border-gray-200 bg-white p-4">
-      <h2 className="text-lg font-semibold">Recomendación</h2>
+    <section aria-label="Recomendación" className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <h2 className="mb-3 flex items-center gap-2 text-base font-semibold text-slate-800 before:h-5 before:w-1 before:rounded-full before:bg-indigo-500 before:content-['']">Recomendación</h2>
       <button
         type="button"
         onClick={generar}
         disabled={enCurso || !jugada}
-        className="mt-2 rounded bg-blue-600 px-3 py-1 text-sm text-white disabled:opacity-50"
+        className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:opacity-70"
       >
         Generar recomendación
       </button>
       {enCurso && (
-        <p role="status" className="mt-2 text-sm text-gray-600">
+        <p role="status" className="mt-3 animate-pulse text-sm text-slate-600">
           Generando recomendación
         </p>
       )}
       {estado.tipo === 'error' && (
-        <p role="alert" className="mt-2 text-sm text-red-700">
+        <p role="alert" className="mt-3 rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700">
           Recomendación no disponible
         </p>
       )}
       {estado.tipo === 'listo' && (
-        <div className="mt-2">
-          <p className="text-xs font-medium text-gray-600">
+        <div className="mt-4 rounded-lg border border-indigo-100 bg-indigo-50/60 p-4">
+          <p className="mb-2 inline-block rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800">
             {estado.datos.generado_por_ia ? 'Generado con IA' : 'Resumen automático (IA no disponible)'}
           </p>
-          <p className="whitespace-pre-line text-sm">{estado.datos.recomendacion}</p>
+          <p className="whitespace-pre-line text-sm leading-relaxed text-slate-800">{estado.datos.recomendacion}</p>
         </div>
       )}
     </section>
