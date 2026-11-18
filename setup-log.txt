@@ -328,3 +328,228 @@ dist/assets/index-o0a3kFYr.js   544.85 kB │ gzip: 163.48 kB
 LISTO. Sube este archivo:
   /Users/ralo/Downloads/entrega-hackathon-unam-20261118-1245.zip
 12:46:00 FIN con código de salida 0
+
+===== setup 2026-11-18 12:57:52 =====
+12:57:52 Sistema detectado: macos arm64  |  Python del arranque: 3.12.12
+12:57:52 MODO: check  |  versión del script: 2026-11-16  |  argumentos: --check
+12:57:52 SISTEMA: macOS-15.5-arm64-arm-64bit  |  detectado: macos arm64  |  versión: Darwin Kernel Version 24.5.0: Tue Apr 22 19:54:43 PDT 2025; root:xnu-11417.121.6~2/RELEASE_ARM64_T8132
+12:57:52 PYTHON: 3.12.12 (/Users/ralo/Downloads/hackathon-unam/.venv/bin/python)
+12:57:52 USUARIO: ralo  |  carpeta actual: /Users/ralo/Downloads/hackathon-unam
+12:57:52 PROYECTO: /Users/ralo/Downloads/hackathon-unam  |  largo de ruta: 36  |  espacios: False  |  no ASCII: False
+12:57:52 DISCO LIBRE: 79.4 GB
+12:57:52 PROXY: ninguno
+12:57:52 Proyecto: /Users/ralo/Downloads/hackathon-unam
+12:57:52 
+Validando (no se descarga ni instala nada)...
+12:57:52 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/uv/uv pip check --python /Users/ralo/Downloads/hackathon-unam/.venv/bin/python
+12:57:52 Checked 55 packages in 4ms
+All installed packages are compatible
+12:57:52 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+12:57:53 
+12:57:53   Pieza              Esperado                            Encontrado      Estado
+12:57:53   -----------------  ----------------------------------  --------------  ------
+12:57:53   uv                 0.11.19                             0.11.19         OK    
+12:57:53   Python (.venv)     3.12.12                             3.12.12         OK    
+12:57:53   Node               v22.23.1                            v22.23.1        OK    
+12:57:53   npm                10.x                                10.9.8          OK    
+12:57:53   Paquetes Python    9 fijos                             9 coinciden     OK    
+12:57:53   Paquetes npm       12 fijos                            12 coinciden    OK    
+12:57:53   pip check          sin conflictos                      sin conflictos  OK    
+12:57:53   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+12:57:53 
+Revisando desviaciones del stack...
+12:57:53 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+12:57:53 
+12:57:53     El proyecto sigue el stack del evento
+12:57:53 
+RESULTADO: TODO OK, puedes entregar.
+12:57:53 FIN con código de salida 0
+
+===== setup 2026-11-18 12:57:58 =====
+12:57:58 Sistema detectado: macos arm64  |  Python del arranque: 3.12.12
+12:57:58 MODO: entregar  |  versión del script: 2026-11-16  |  argumentos: --entregar
+12:57:58 SISTEMA: macOS-15.5-arm64-arm-64bit  |  detectado: macos arm64  |  versión: Darwin Kernel Version 24.5.0: Tue Apr 22 19:54:43 PDT 2025; root:xnu-11417.121.6~2/RELEASE_ARM64_T8132
+12:57:58 PYTHON: 3.12.12 (/Users/ralo/Downloads/hackathon-unam/.venv/bin/python)
+12:57:58 USUARIO: ralo  |  carpeta actual: /Users/ralo/Downloads/hackathon-unam
+12:57:58 PROYECTO: /Users/ralo/Downloads/hackathon-unam  |  largo de ruta: 36  |  espacios: False  |  no ASCII: False
+12:57:58 DISCO LIBRE: 79.4 GB
+12:57:58 PROXY: ninguno
+12:57:58 Proyecto: /Users/ralo/Downloads/hackathon-unam
+12:57:58 
+Preparando la entrega...
+12:57:58 
+[1/7] Validando el entorno
+12:57:58 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/uv/uv pip check --python /Users/ralo/Downloads/hackathon-unam/.venv/bin/python
+12:57:58 Checked 55 packages in 0.62ms
+All installed packages are compatible
+12:57:58 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+12:57:58 
+12:57:58   Pieza              Esperado                            Encontrado      Estado
+12:57:58   -----------------  ----------------------------------  --------------  ------
+12:57:58   uv                 0.11.19                             0.11.19         OK    
+12:57:58   Python (.venv)     3.12.12                             3.12.12         OK    
+12:57:58   Node               v22.23.1                            v22.23.1        OK    
+12:57:58   npm                10.x                                10.9.8          OK    
+12:57:58   Paquetes Python    9 fijos                             9 coinciden     OK    
+12:57:58   Paquetes npm       12 fijos                            12 coinciden    OK    
+12:57:58   pip check          sin conflictos                      sin conflictos  OK    
+12:57:58   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+12:57:58 
+[2/7] Revisando el README y el stack
+12:57:58     AVISO: README.md no tiene ninguna imagen; los jueces piden un visual bien formateado
+12:57:59 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+12:57:59 
+12:57:59     El proyecto sigue el stack del evento
+12:57:59     Rutas del dashboard OK (ninguna empieza con '/')
+12:57:59 
+[3/7] Compilando el dashboard (vite build)
+12:57:59 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/node/bin/node /Users/ralo/Downloads/hackathon-unam/dashboard/node_modules/vite/bin/vite.js build
+12:58:00 vite v5.4.21 building for production...
+transforming...
+✓ 429 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.38 kB │ gzip:   0.28 kB
+dist/assets/index-CA6Is8z4.css   16.51 kB │ gzip:   3.84 kB
+dist/assets/index-NWq9Shjd.js   549.35 kB │ gzip: 164.50 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.14s
+12:58:00     Dashboard compilado en dashboard/dist
+12:58:00 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/node/bin/node /Users/ralo/Downloads/hackathon-unam/dashboard/node_modules/typescript/bin/tsc --noEmit -p /Users/ralo/Downloads/hackathon-unam/dashboard
+12:58:01 
+12:58:01 
+[4/7] Comprobando el backend (sintaxis e importación)
+12:58:01 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -m compileall -q backend
+12:58:01 
+12:58:01 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import backend.main
+12:58:01 
+12:58:01     Backend OK (backend.main se importa sin errores)
+12:58:01 
+[5/7] Buscando llaves y credenciales en tus archivos
+12:58:01     Sin credenciales a la vista
+12:58:01 
+[6/7] Empaquetando
+12:58:20 
+[7/7] Verificando el .zip
+12:58:20     194 archivos, 171.2 MB
+12:58:20 
+LISTO. Sube este archivo:
+  /Users/ralo/Downloads/entrega-hackathon-unam-20261118-1257.zip
+12:58:20 FIN con código de salida 0
+
+===== setup 2026-11-18 13:07:06 =====
+13:07:06 Sistema detectado: macos arm64  |  Python del arranque: 3.12.12
+13:07:06 MODO: check  |  versión del script: 2026-11-16  |  argumentos: --check
+13:07:06 SISTEMA: macOS-15.5-arm64-arm-64bit  |  detectado: macos arm64  |  versión: Darwin Kernel Version 24.5.0: Tue Apr 22 19:54:43 PDT 2025; root:xnu-11417.121.6~2/RELEASE_ARM64_T8132
+13:07:06 PYTHON: 3.12.12 (/Users/ralo/Downloads/hackathon-unam/.venv/bin/python)
+13:07:06 USUARIO: ralo  |  carpeta actual: /Users/ralo/Downloads/hackathon-unam
+13:07:06 PROYECTO: /Users/ralo/Downloads/hackathon-unam  |  largo de ruta: 36  |  espacios: False  |  no ASCII: False
+13:07:06 DISCO LIBRE: 79.2 GB
+13:07:06 PROXY: ninguno
+13:07:06 Proyecto: /Users/ralo/Downloads/hackathon-unam
+13:07:06 
+Validando (no se descarga ni instala nada)...
+13:07:06 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/uv/uv pip check --python /Users/ralo/Downloads/hackathon-unam/.venv/bin/python
+13:07:06 Checked 55 packages in 4ms
+All installed packages are compatible
+13:07:06 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+13:07:07 
+13:07:07   Pieza              Esperado                            Encontrado      Estado
+13:07:07   -----------------  ----------------------------------  --------------  ------
+13:07:07   uv                 0.11.19                             0.11.19         OK    
+13:07:07   Python (.venv)     3.12.12                             3.12.12         OK    
+13:07:07   Node               v22.23.1                            v22.23.1        OK    
+13:07:07   npm                10.x                                10.9.8          OK    
+13:07:07   Paquetes Python    9 fijos                             9 coinciden     OK    
+13:07:07   Paquetes npm       12 fijos                            12 coinciden    OK    
+13:07:07   pip check          sin conflictos                      sin conflictos  OK    
+13:07:07   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+13:07:07 
+Revisando desviaciones del stack...
+13:07:07 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+13:07:07 
+13:07:07     El proyecto sigue el stack del evento
+13:07:07 
+RESULTADO: TODO OK, puedes entregar.
+13:07:07 FIN con código de salida 0
+
+===== setup 2026-11-18 13:07:11 =====
+13:07:11 Sistema detectado: macos arm64  |  Python del arranque: 3.12.12
+13:07:11 MODO: entregar  |  versión del script: 2026-11-16  |  argumentos: --entregar
+13:07:11 SISTEMA: macOS-15.5-arm64-arm-64bit  |  detectado: macos arm64  |  versión: Darwin Kernel Version 24.5.0: Tue Apr 22 19:54:43 PDT 2025; root:xnu-11417.121.6~2/RELEASE_ARM64_T8132
+13:07:11 PYTHON: 3.12.12 (/Users/ralo/Downloads/hackathon-unam/.venv/bin/python)
+13:07:11 USUARIO: ralo  |  carpeta actual: /Users/ralo/Downloads/hackathon-unam
+13:07:11 PROYECTO: /Users/ralo/Downloads/hackathon-unam  |  largo de ruta: 36  |  espacios: False  |  no ASCII: False
+13:07:11 DISCO LIBRE: 79.2 GB
+13:07:11 PROXY: ninguno
+13:07:11 Proyecto: /Users/ralo/Downloads/hackathon-unam
+13:07:11 
+Preparando la entrega...
+13:07:11 
+[1/7] Validando el entorno
+13:07:11 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/uv/uv pip check --python /Users/ralo/Downloads/hackathon-unam/.venv/bin/python
+13:07:11 Checked 55 packages in 0.87ms
+All installed packages are compatible
+13:07:11 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+13:07:12 
+13:07:12   Pieza              Esperado                            Encontrado      Estado
+13:07:12   -----------------  ----------------------------------  --------------  ------
+13:07:12   uv                 0.11.19                             0.11.19         OK    
+13:07:12   Python (.venv)     3.12.12                             3.12.12         OK    
+13:07:12   Node               v22.23.1                            v22.23.1        OK    
+13:07:12   npm                10.x                                10.9.8          OK    
+13:07:12   Paquetes Python    9 fijos                             9 coinciden     OK    
+13:07:12   Paquetes npm       12 fijos                            12 coinciden    OK    
+13:07:12   pip check          sin conflictos                      sin conflictos  OK    
+13:07:12   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+13:07:12 
+[2/7] Revisando el README y el stack
+13:07:12     AVISO: README.md no tiene ninguna imagen; los jueces piden un visual bien formateado
+13:07:12 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+13:07:12 
+13:07:12     El proyecto sigue el stack del evento
+13:07:12     Rutas del dashboard OK (ninguna empieza con '/')
+13:07:12 
+[3/7] Compilando el dashboard (vite build)
+13:07:12 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/node/bin/node /Users/ralo/Downloads/hackathon-unam/dashboard/node_modules/vite/bin/vite.js build
+13:07:13 vite v5.4.21 building for production...
+transforming...
+✓ 429 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.38 kB │ gzip:   0.28 kB
+dist/assets/index-CA6Is8z4.css   16.51 kB │ gzip:   3.84 kB
+dist/assets/index-NWq9Shjd.js   549.35 kB │ gzip: 164.50 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.02s
+13:07:13     Dashboard compilado en dashboard/dist
+13:07:13 $ /Users/ralo/Downloads/hackathon-unam/.hackathon/.tools/node/bin/node /Users/ralo/Downloads/hackathon-unam/dashboard/node_modules/typescript/bin/tsc --noEmit -p /Users/ralo/Downloads/hackathon-unam/dashboard
+13:07:14 
+13:07:14 
+[4/7] Comprobando el backend (sintaxis e importación)
+13:07:14 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -m compileall -q backend
+13:07:14 
+13:07:14 $ /Users/ralo/Downloads/hackathon-unam/.venv/bin/python -c import backend.main
+13:07:14 
+13:07:14     Backend OK (backend.main se importa sin errores)
+13:07:14 
+[5/7] Buscando llaves y credenciales en tus archivos
+13:07:14     .env NO se incluye en el .zip (las llaves de desarrollo no viajan; el despliegue usa su propio rol)
+13:07:14     Sin credenciales a la vista
+13:07:14 
+[6/7] Empaquetando
+13:07:33 
+[7/7] Verificando el .zip
+13:07:34     195 archivos, 171.2 MB
+13:07:34 
+LISTO. Sube este archivo:
+  /Users/ralo/Downloads/entrega-hackathon-unam-20261118-1307.zip
+13:07:34 FIN con código de salida 0
