@@ -90,7 +90,17 @@ Se generan hasta 5 sugerencias con plantillas fijas en español (formación, per
 | de 5 a 14 | `media` |
 | 15 o más | `alta` |
 
-### 6. Repetición 2D
+### 6. Recomendación en texto con IA (opcional)
+
+`POST /api/recomendacion` recibe la jugada fallida y las sugerencias ya calculadas, y pide a un modelo de lenguaje en Amazon Bedrock (Nova Pro, con Strands Agents) que las redacte como una recomendación breve para el entrenador.
+
+- **Solo usa lo que recibe.** El prompt contiene únicamente la jugada y las sugerencias. Se le indica responder en español, en un máximo de 1,500 caracteres, citar el `nMuestra` de cada sugerencia y no inventar cifras.
+- **Siempre hay respuesta.** Si la IA falla, devuelve texto vacío, no hay credenciales o tarda más de 20 segundos, el backend responde con un resumen fijo armado con plantilla y marca `generado_por_ia = false`. La interfaz muestra "Generado con IA" o "Resumen automático (IA no disponible)" según corresponda.
+- **La IA no sostiene el análisis.** Filtros, jugadas, repetición, similares y sugerencias se calculan sin IA. Si la IA no está disponible, solo cambia el texto de la recomendación.
+- **Validación.** Un cuerpo inválido, o con más de 20 sugerencias, se rechaza con error 422 antes de llamar al modelo.
+- **Costo y control.** La llamada ocurre solo cuando el entrenador pulsa "Generar recomendación", una vez por clic.
+
+### 7. Repetición 2D
 
 El tracking de la jugada se normaliza para que la ofensiva avance siempre hacia `x` creciente (si `playDirection = left`, `x' = 120 - x` y `y' = 53.3 - y`). Las coordenadas de los jugadores se limitan al campo (0 a 120 y 0 a 53.3). Se anima a 10 cuadros por segundo, con línea de tiempo y marcas de Snap, Pase y Resultado.
 
@@ -182,7 +192,14 @@ Pruebas:
 .venv/bin/python -m pytest backend/tests -q
 ```
 
-Para usar la IA, define `AWS_REGION` y `BEDROCK_MODEL_ID` en `.env` (por defecto `us-east-1` y `us.amazon.nova-pro-v1:0`). `.env` no se versiona. Sin credenciales, la aplicación usa el resumen con plantilla.
+#### Activar la IA
+
+1. Copia `.env.example` como `.env` en la raíz del proyecto.
+2. Pega las llaves temporales del workshop: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` y `AWS_SESSION_TOKEN`. Valen unas horas.
+3. Opcional: `AWS_REGION` (por defecto `us-east-1`) y `BEDROCK_MODEL_ID` (por defecto `us.amazon.nova-pro-v1:0`).
+4. Reinicia el backend, porque `.env` se lee al arrancar.
+
+`.env` no se versiona ni se incluye en el .zip de entrega, y las llaves nunca van en el código ni en este README. En AWS las credenciales vienen del rol y no se usan llaves. Sin credenciales, o con llaves vencidas, la aplicación usa el resumen con plantilla.
 
 ## Reparto del trabajo
 
